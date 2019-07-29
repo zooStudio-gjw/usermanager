@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/zoostudio_user?useUnicode=true&characterEncoding=UTF-8
+    username: gjw
+    password: w45456306
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jap:
+    hibernate.ddl-auto: update
+    show-sql: true
+
+---
+spring:
+  profiles: dev
+server:
+  port: 8070
+
+
+
+
+
+
+
