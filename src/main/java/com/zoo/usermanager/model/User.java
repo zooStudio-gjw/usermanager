@@ -1,7 +1,11 @@
 package com.zoo.usermanager.model;
 
 
+import javax.persistence.*;
+
+@Entity
 public class User {
+
 
     private Integer user_id ;
     private String user_name ;
@@ -9,7 +13,8 @@ public class User {
     private String passWord;
 
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Integer getUser_id() {
         return user_id;
     }
@@ -18,6 +23,7 @@ public class User {
         this.user_id = user_id;
     }
 
+    @Column
     public String getUser_name() {
         return user_name;
     }
@@ -26,6 +32,7 @@ public class User {
         this.user_name = user_name;
     }
 
+    @Column
     public String getLoginName() {
         return loginName;
     }
@@ -34,6 +41,7 @@ public class User {
         this.loginName = loginName;
     }
 
+    @Column
     public String getPassWord() {
         return passWord;
     }

@@ -5,9 +5,9 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/zoostudio_user?useUnicode=true&characterEncoding=UTF-8
-    username: gjw
-    password: w45456306
+    url: jdbc:mysql://localhost:3306/zoostudio?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jap:
     hibernate.ddl-auto: update
