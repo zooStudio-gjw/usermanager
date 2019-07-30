@@ -12,6 +12,13 @@ spring:
   jap:
     hibernate.ddl-auto: update
     show-sql: true
+  thymeleaf:
+    prefix: classpath:/web/
+    suffix: .html
+    mode: LEGACYHTML5  #不严格的html检查
+
+
+
 
 ---
 spring:
