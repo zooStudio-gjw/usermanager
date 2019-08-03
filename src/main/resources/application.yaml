@@ -6,16 +6,23 @@ spring:
     active: dev
   datasource:
     url: jdbc:mysql://localhost:3306/zoostudio?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-    username: root
-    password:
+    username: gjw
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-  jap:
-    hibernate.ddl-auto: update
-    show-sql: true
+
   thymeleaf:
-    prefix: classpath:/web/
     suffix: .html
-    mode: LEGACYHTML5  #不严格的html检查
+    prefix: classpath:/web/
+    mode: HTML
+    servlet:
+      content-type: text/html
+  ##   mode: LEGACYHTML5  #不严格的html检查
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+      ddl-auto: update
+    open-in-view: false
+    show-sql: true
 
 
 
@@ -23,12 +30,17 @@ spring:
 ---
 spring:
   profiles: dev
+  ##热部署
+  devtools:
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
 server:
   port: 8070
 
-
-
-
-
-
-
+debug: true
+logging:
+  config: classpath:config/logback.xml
+##  去掉不需要的CONDITIONS EVALUATION REPORT信息
+logging.level.org.springfreamwork.boot.autoconfigure: error

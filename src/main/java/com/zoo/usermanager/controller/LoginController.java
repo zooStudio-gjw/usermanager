@@ -12,8 +12,6 @@ public class LoginController {
     @RequestMapping("/index")
     public User index(){
         User user = new User();
-        user.setUser_id(1001);
-        user.setUser_name("test");
 
         return user;
     }
