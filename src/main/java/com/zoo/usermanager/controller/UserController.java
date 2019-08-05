@@ -18,16 +18,22 @@ public class UserController {
     private IUserService userService ;
 
     @RequestMapping("/user")
-    public String findAllUser(Model model){
+    public String findAllUser(Model model) throws Exception{
         List<User> users = userService.findAllUser();
         model.addAttribute("users",users);
+
+        if(users.size() != 0){
+            throw  new Exception("运行时异常");
+        }
 
         return "user";
     }
 
     @RequestMapping("/user/insert")
-    public void insertUser(){
+    public void insertUser() throws RuntimeException{
         User user = new User();
+        if(user != null)
+            throw new RuntimeException("插入异常");
         userService.insertUser(user);
     }
 }
