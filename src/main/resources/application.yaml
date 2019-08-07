@@ -36,6 +36,9 @@ spring:
       enabled: true
   thymeleaf:
     cache: false
+  redis:
+    host: localhost
+    port: 6379
 server:
   port: 8070
 
@@ -44,3 +47,5 @@ logging:
   config: classpath:config/logback.xml
 ##  去掉不需要的CONDITIONS EVALUATION REPORT信息
 logging.level.org.springfreamwork.boot.autoconfigure: error
+
+##redis
